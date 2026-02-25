@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title th:text="${message}"></title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Message Form</title></head>
 <body>
-
-<h1>Hello, World!</h1>
-
-<form action="/press" method="get">
-    <button type="submit">Press me</button>
+<h2>Send a Message</h2>
+<form action="/submit" method="post">
+    <input type="text" name="userMessage" placeholder="Type something..." />
+    <input type="test" name="userDesk" placeholder="Beutifull Description"/>
+    <button type="submit">Send</button>
 </form>
-
 </body>
 </html>
