@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Message Form</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<h1>tasks</h1>
+<ul>
+    <li th:each="task : ${tasks}">
+        <b th:text="${task.title}"></b> - <span th:text="${task.desc}"></span>
+    </li>
+</ul>
+
+<form action="/" method="get">
+    <button type="submit">Go back</button>
+</form>
+
+</body>
+</html>

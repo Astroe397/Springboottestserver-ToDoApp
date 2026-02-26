@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Message Form</title></head>
+<head>
+    <title>Message Form</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
 <body>
-<h2>Send a Message</h2>
+<span>
+<h1>Add a task</h1>
 <form action="/submit" method="post">
-    <input type="text" name="userMessage" placeholder="Type something..." />
-    <input type="test" name="userDesk" placeholder="Beutifull Description"/>
+    <input type="text" name="title" placeholder="Type something..." />
+    <input type="text" name="desc" placeholder="Beutifull Description"/>
     <button type="submit">Send</button>
 </form>
+</span>
+<span>
+<form action="/tasks" method="get">
+    <button type="submit">View tasks</button>
+</form>
+</span>
 </body>
 </html>

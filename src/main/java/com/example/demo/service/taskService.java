@@ -1,27 +1,25 @@
 package com.example.demo.service;
 
-
 import com.example.demo.model.Task;
 import com.example.demo.repository.TaskRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Service
-public class taskService {
+public class taskService{
 
-    private final TaskRepo taskRepo;
+    @Autowired
+    private TaskRepo TaskRepo;
 
-    public taskService(TaskRepo taskRepo) {
-        this.taskRepo = taskRepo;
-    }
-
-
-    public Task saveTask(String title, String desc){
+    public void addTask(String title , String desc){
         Task task = new Task(title,desc);
-        System.out.println(task.description);
-        System.out.println(task.title);
-        return taskRepo.save(task);
-    }
+        TaskRepo.save(task);
 
+    }
+    public List<Task> getAllTasks(){
+
+        return TaskRepo.findAll();
+    }
 }

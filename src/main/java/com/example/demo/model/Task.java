@@ -6,18 +6,21 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Task {
+public class Task{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
-    public String title;
-    public String description;
+    private Long id;
+    private String title;
+    private String desc;
 
     public Task(){}
-
-    public Task(String title, String description){
-        this.title=title;
-        this.description=description;
+    public Task(String x, String y){
+        this.title=x;
+        this.desc=y;
     }
+
+    public String getTitle() { return this.title; }
+    public String getDesc() { return this.desc; }
+
 }
